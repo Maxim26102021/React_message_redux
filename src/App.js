@@ -1,25 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import Header from "./components/Header/Header";
+import Sidebar from "./components/Sidebar/Sidebar";
+import './App.css'
+import News from "./components/News/News"
+import {BrowserRouter, Route, Routes} from "react-router-dom";
+import Profile from "./components/Profile/Profile"
+import DialogsContainer from "./components/Dialogs/DialogsContainer";
+import StoreContext from "./storeContext";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+function App(props) {
+    return (
+        <BrowserRouter>
+            <StoreContext.Provider value={props.store}>
+            <div className="wrapper">
+                <Header/>
+                <Sidebar/>
+                <div className="wrapper-content">
+                    <Routes>
+                        <Route path="/dialogs/*" element={<DialogsContainer data={props.store}/>}/>
+                        <Route path="/title/*" element={<Profile store={props.store}/>}/>
+                        <Route path="/news/*" element={<News/>}/>
+                    </Routes>
+                </div>
+            </div>
+            </StoreContext.Provider>
+        </BrowserRouter>
+    );
 }
 
 export default App;

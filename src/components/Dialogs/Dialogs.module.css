@@ -1,0 +1,27 @@
+.content {
+    background-color: #66ded4;
+    display: grid;
+    grid-template-columns: 4fr 6fr;
+}
+
+.dialogItems {
+    text-align: start;
+}
+
+.dialog {
+    padding: 10px;
+    cursor:pointer;
+    text-decoration: none;
+}
+
+.messages {
+    text-align: start;
+}
+
+.message {
+    padding: 10px;
+}
+
+.active {
+    font-size: 20px;
+}

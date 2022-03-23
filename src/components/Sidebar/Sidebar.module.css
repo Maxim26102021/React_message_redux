@@ -1,0 +1,24 @@
+.sidebar {
+    display: grid;
+    background-color: #27069c;
+    grid-area: S;
+    align-items: start;
+    grid-template-rows: repeat(5, 1fr);
+    padding: 10px;
+}
+
+.active {
+    color: navajowhite;
+    font-size: 18px;
+    border: 2px solid white;
+    text-decoration: none;
+}
+
+.item {
+    text-decoration: none;
+    border: 2px solid white;
+    max-width: 100%;
+    color: white;
+    transition: 1s;
+}
+

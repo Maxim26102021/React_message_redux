@@ -1,0 +1,10 @@
+.title {
+    padding: 12px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+}
+
+button {
+    width: 100px;
+}
